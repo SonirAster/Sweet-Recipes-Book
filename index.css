@@ -1,0 +1,143 @@
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}   
+
+.wrapper {
+    background: url('./background1.jpg') fixed;
+    height: 100%;
+    line-height: 1;
+    color: #FFF;
+    font-family: Arial, Helvetica, sans-serif;  
+}
+
+.header {
+    background-color: rgb(24, 27, 24);
+    height: 4rem;
+    width: 100%;
+    border-bottom: 1px solid #fff;
+    top: 0;
+    position: sticky;
+}
+
+.logo {
+    max-width: 50px;
+    max-height: 20px;  
+}
+.search-field {
+    background-color: rgb(104, 99, 99);
+    border: 2px solid black;
+    border-radius: 15px;
+    max-width: 20%;
+    min-width: 10%;
+    padding: 5px 5px 5px 10px;
+    min-height: 30px;
+    max-height: 60px;
+    opacity: 0.5;
+}
+.search-field:focus {
+    /* box-shadow: 0 0 0 #fff; */
+}
+
+
+.header-row {
+    padding-left: 5px;      
+}
+
+.menu-icon {
+    position: absolute;
+    top: 35%;
+    right: 10%;
+}
+
+.block-container {
+    max-width: 1270px;
+    padding: 20px;
+    margin: 0 auto;
+    background: rgb(197, 156, 69);
+    display: flow-root;
+}
+
+.block {
+    padding: 10px;
+    background-color: rgb(24, 27, 24);
+    max-width: 32%;
+    min-width: 20%;
+    height: 20rem;
+    /* max-height: 200px;
+    overflow: hidden; */
+    border: 1px solid;
+    float: left;
+    margin: 8px;
+    border-radius: 15px;
+    box-shadow: -2px 4px 5px  #000;
+    cursor: default;
+}
+.block:hover {
+    padding: 7px 7px 7px 7px;
+    box-shadow: -2px 5px 5px  #000;
+    border: 1px solid rgb(56, 50, 50);
+}
+
+
+.block-title {
+    display: block;
+    /* float: right; */
+    font-size: 22px;
+    margin: 10px 0px 10px 0px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #FFF;
+}
+.block-title:hover {
+    color: rgb(197, 156, 69);
+}
+.block-title:active {
+    color: rgb(120, 96, 50);
+}
+
+.block-content {
+    font-size: 16px;
+    line-height: 130%;
+    display: block;  
+}
+
+.block-image {
+    width: 150px;
+    height: 150px;
+    padding: 0;
+    border: 1px solid #FFF;
+    float: left;
+    border-radius: 50%; 
+    margin: 5px 10px 5px 5px;
+}
+
+.footer {
+    background-color: rgb(24, 27, 24);
+    height: 4rem;
+    width: 100%;
+    clear: both;
+    border-top: 1px solid #fff;
+}
+
+.categories-block {
+    display: inline-block;
+    background-color: rgb(60, 60, 60);
+    border-radius: 20px;
+    border: #fff 1px solid;
+    height: 20px;
+    max-width: 150px;
+    padding: 3px 5px 22px 5px;
+    margin: 5px 5px 10px 5px;      
+}
+.categories-block:hover {
+    color: rgb(197, 156, 69);   
+    cursor: pointer;
+}
+.categories-block:active {
+    color: rgb(120, 96, 50);
+}
