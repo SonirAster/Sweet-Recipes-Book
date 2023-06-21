@@ -22,36 +22,40 @@
     border-bottom: 1px solid #fff;
     top: 0;
     position: sticky;
+    display: grid;
+    grid-template-areas: 
+    'logo ';
 }
 
 .logo {
-    max-width: 50px;
-    max-height: 20px;  
+    grid-area: logo;
+    width: 4rem;
+    height: 3rem;  
+}
+.categories-button {
+    grid-area: categories;
 }
 .search-field {
     background-color: rgb(104, 99, 99);
     border: 2px solid black;
     border-radius: 15px;
-    max-width: 20%;
-    min-width: 10%;
+    /* max-width: 20%; */
+
     padding: 5px 5px 5px 10px;
     min-height: 30px;
     max-height: 60px;
-    opacity: 0.5;
 }
 .search-field:focus {
     /* box-shadow: 0 0 0 #fff; */
 }
-
-
-.header-row {
-    padding-left: 5px;      
+.quiz-button {
+    grid-area: quiz;
 }
-
+.contacts {
+    grid-area: contacts;
+}
 .menu-icon {
-    position: absolute;
-    top: 35%;
-    right: 10%;
+    grid-area: menu-icon;
 }
 
 .block-container {
@@ -68,8 +72,6 @@
     max-width: 32%;
     min-width: 20%;
     height: 20rem;
-    /* max-height: 200px;
-    overflow: hidden; */
     border: 1px solid;
     float: left;
     margin: 8px;
@@ -86,7 +88,6 @@
 
 .block-title {
     display: block;
-    /* float: right; */
     font-size: 22px;
     margin: 10px 0px 10px 0px;
     cursor: pointer;
@@ -97,6 +98,24 @@
     color: rgb(197, 156, 69);
 }
 .block-title:active {
+    color: rgb(120, 96, 50);
+}
+
+.block-categories {
+    display: inline-block;
+    background-color: rgb(60, 60, 60);
+    border-radius: 20px;
+    border: 1px solid rgb(56, 50, 50);
+    height: 20px;
+    max-width: 150px;
+    padding: 3px 5px 22px 5px;
+    margin: 5px 5px 10px 5px;      
+}
+.block-categories:hover {
+    color: rgb(197, 156, 69);   
+    cursor: pointer;
+}
+.block-categories:active {
     color: rgb(120, 96, 50);
 }
 
@@ -124,20 +143,3 @@
     border-top: 1px solid #fff;
 }
 
-.categories-block {
-    display: inline-block;
-    background-color: rgb(60, 60, 60);
-    border-radius: 20px;
-    border: #fff 1px solid;
-    height: 20px;
-    max-width: 150px;
-    padding: 3px 5px 22px 5px;
-    margin: 5px 5px 10px 5px;      
-}
-.categories-block:hover {
-    color: rgb(197, 156, 69);   
-    cursor: pointer;
-}
-.categories-block:active {
-    color: rgb(120, 96, 50);
-}
