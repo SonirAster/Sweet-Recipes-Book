@@ -15,7 +15,7 @@
     font-family: Arial, Helvetica, sans-serif;  
 }
 
-.header {
+.header {   
     background-color: rgb(24, 27, 24);
     height: 4rem;
     width: 100%;
@@ -24,38 +24,90 @@
     position: sticky;
     display: grid;
     grid-template-areas: 
-    'logo ';
+    'logo search categories contacts quiz sign-in';
+    grid-template-columns: 10% 25% 20% 15% 15% 15%;
+    align-items: center;
+    justify-items: center;
+    cursor: default;
 }
+
 
 .logo {
     grid-area: logo;
-    width: 4rem;
-    height: 3rem;  
+    width: 3.2rem;
+    height: 3.2rem;  
+    border: 2px solid #fff;
+    border-radius: 50%;
 }
+.logo:hover {
+    border: 3px solid rgb(197, 156, 69);
+    cursor: pointer;
+}
+.logo:active {
+    border: 3px solid rgb(120, 96, 50);
+}
+
 .categories-button {
     grid-area: categories;
+    cursor: pointer;
 }
-.search-field {
-    background-color: rgb(104, 99, 99);
-    border: 2px solid black;
-    border-radius: 15px;
-    /* max-width: 20%; */
+.categories-button:hover {
+    color: rgb(197, 156, 69);
+}
 
+.search-bar {
+    background-color: #fff;
+    border: 2px solid #fff; 
+    border-radius: 15px;
+    grid: search;
     padding: 5px 5px 5px 10px;
-    min-height: 30px;
-    max-height: 60px;
+    height: 50%;
+    display: flex;
+    justify-content: center;
 }
-.search-field:focus {
-    /* box-shadow: 0 0 0 #fff; */
+.search-bar img{
+    width: 20px;
+    height: 20px;
+    cursor: default;
 }
+.search-bar button {
+    padding-right: 2px;
+    cursor: pointer;
+    border: 0;
+    background-color: #fff;
+}
+.search-bar input {
+    color: #000;
+    background: transparent;
+    width: 100%;
+    border: none;
+    outline: 0;
+}
+.search-bar:hover {
+    border: 2px solid rgb(197, 156, 69); 
+}
+
 .quiz-button {
     grid-area: quiz;
+    cursor: pointer;
 }
+.quiz-button:hover {
+    color: rgb(197, 156, 69);
+}
+
 .contacts {
     grid-area: contacts;
+    font-size: 15px;
+    text-align: center;
+    line-height: 1.2;
 }
-.menu-icon {
-    grid-area: menu-icon;
+
+.sign-in-button {
+    grid-area: sign-in;
+}
+.sign-in-button:hover {
+    color: rgb(197, 156, 69);
+    cursor: pointer;
 }
 
 .block-container {
@@ -84,7 +136,6 @@
     box-shadow: -2px 5px 5px  #000;
     border: 1px solid rgb(56, 50, 50);
 }
-
 
 .block-title {
     display: block;
@@ -136,6 +187,8 @@
 }
 
 .footer {
+    display: flex;
+    justify-content: space-around;
     background-color: rgb(24, 27, 24);
     height: 4rem;
     width: 100%;

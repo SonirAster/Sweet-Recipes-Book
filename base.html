@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width">
+    <meta name="format-detection" content="telephone-no">
     <title>recipes_book</title>
     <link rel="stylesheet" href="index.css">
 </head>
@@ -12,27 +13,24 @@
 <body>
     <div class="wrapper">
         <header class="header">
-            <img src="./background3.jpg" class="logo">  
+            <a href=""><img src="./logo.jpeg" class="logo">  </a>
                 <div class="categories-button">
-                    categories
+                    Categories
                 </div>           
-                <div class="search-field">
-                    search
+                <form class="search-bar" action="https://www.google.com/search" method="get">
+                    <input type="text" placeholder="Search" name="q">
+                    <button type="submit"><img src="./search.png"></button>
+                </form>
+                <div class="contacts">      
+                    <div>Contact us!</div>
+                    <div>+00 000 123 45 67</div>        
+                    <div>+00 000 123 45 68</div>        
                 </div>
                 <div class="quiz-button">
-                    quiz
-                </div>
-                <div class="contacts">
-                    contact us!
-                    +00 123 45 67
-                    <br/>
-                    +00 123 45 67      
-                </div>
-                <div class="menu-icon">
-                    m
+                    Recipe Quiz
                 </div>
                 <div class="sign-in-button">
-                    sign in
+                    Sign In
                 </div>          
         </header>
 
@@ -174,14 +172,12 @@
         </div>
 
         <footer class="footer">
-            <img src="" class="logo">
-            <div class="footer-row">
-                <div>
-                    contact us
-                </div>
-                <div>
-                    facebook instagram youtube
-                </div>
+            <img src="./logo.jpeg" class="logo">
+            <div class="contacts">
+                contact us
+            </div>
+            <div>
+                facebook instagram youtube
             </div>
         </footer>
     </div>
