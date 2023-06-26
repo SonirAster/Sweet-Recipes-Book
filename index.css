@@ -6,13 +6,16 @@
     border: 0;
     box-sizing: border-box;
 }   
-
+body{height:100%;}
 .wrapper {
     background: url('./background1.jpg') fixed;
     height: 100%;
     line-height: 1;
     color: #FFF;
     font-family: Arial, Helvetica, sans-serif;  
+}
+.logo, .categories-menu, .categories-list, .search-bar, .quiz-button, .sign-in-button, .block-image {
+    user-select: none;
 }
 
 .header {   
@@ -28,9 +31,9 @@
     grid-template-columns: 10% 25% 20% 15% 15% 15%;
     align-items: center;
     justify-items: center;
+    justify-content: center;
     cursor: default;
 }
-
 
 .logo {
     grid-area: logo;
@@ -42,17 +45,48 @@
 .logo:hover {
     border: 3px solid rgb(197, 156, 69);
     cursor: pointer;
+    transition: .1s;
+    transform: scale(1.1);
 }
 .logo:active {
     border: 3px solid rgb(120, 96, 50);
 }
 
-.categories-button {
+.categories-menu {
     grid-area: categories;
-    cursor: pointer;
+    position: absolute;
 }
-.categories-button:hover {
-    color: rgb(197, 156, 69);
+.categories-menu:hover {
+    color: rgb(197, 156, 69); 
+    border: 1px solid #fff;
+    border-radius: 10px;
+    padding: 20px;
+    justify-items: center;
+}
+.categories-menu:hover > ul {
+    display: initial;
+}
+.categories-list {
+    background-color: rgb(24, 27, 24);
+    display: none; 
+    position: absolute;
+    min-width: 100%;
+    margin: 27% 0 0 -86%;
+    padding: 5px 15% 5px 10%;
+    border: 1px solid #FFF;   
+    border-radius: 5%;
+    list-style: none;
+}
+.categories-list a {
+    text-decoration: none;
+    color: #fff;
+    line-height: 1.5;
+}
+.categories-list a:hover {
+    color: rgb(197, 156, 69); 
+}
+.categories-list a:active {
+    color: rgb(120, 96, 50);
 }
 
 .search-bar {
@@ -87,12 +121,16 @@
     border: 2px solid rgb(197, 156, 69); 
 }
 
+
 .quiz-button {
     grid-area: quiz;
     cursor: pointer;
 }
 .quiz-button:hover {
     color: rgb(197, 156, 69);
+}
+.quiz-button:active {
+    color: rgb(120, 96, 50);
 }
 
 .contacts {
@@ -101,13 +139,24 @@
     text-align: center;
     line-height: 1.2;
 }
+.contacts span {
+    user-select: none;
+}
 
 .sign-in-button {
     grid-area: sign-in;
 }
-.sign-in-button:hover {
+
+.sign-in-button a {
+    text-decoration: none;
+    color: #fff;
+}
+.sign-in-button a:hover {
     color: rgb(197, 156, 69);
     cursor: pointer;
+}
+.sign-in-button a:active {
+    color: rgb(120, 96, 50);
 }
 
 .block-container {
@@ -116,6 +165,7 @@
     margin: 0 auto;
     background: rgb(197, 156, 69);
     display: flow-root;
+    min-height: 100vh;
 }
 
 .block {
@@ -186,13 +236,38 @@
     margin: 5px 10px 5px 5px;
 }
 
+
 .footer {
-    display: flex;
-    justify-content: space-around;
     background-color: rgb(24, 27, 24);
     height: 4rem;
     width: 100%;
-    clear: both;
     border-top: 1px solid #fff;
+    display: grid;
+    grid-template-areas: 
+    'logo contacts channels';
+    grid-template-columns: 10% 25% 65%;
+    align-items: center;
+    justify-items: center;
+    cursor: default;
 }
 
+.channels {
+    grid-area: channels;
+    padding-left: 50%;
+}
+.channels a {
+    padding: 5px;
+    cursor: default;
+}
+.channels img {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    cursor: pointer;  
+}
+.channels img:hover {
+    border: 2px solid rgb(197, 156, 69);
+}
+.channels img:active {
+    border: 3px solid rgb(120, 96, 50);
+}
