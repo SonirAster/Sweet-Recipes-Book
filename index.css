@@ -7,7 +7,7 @@
     box-sizing: border-box;
 }   
 body{height:100%;}
-.wrapper {
+.page-wrapper {
     background: url('./background1.jpg') fixed;
     height: 100%;
     line-height: 1;
@@ -125,6 +125,7 @@ body{height:100%;}
 .quiz-button {
     grid-area: quiz;
     cursor: pointer;
+    line-height: 1.1;
 }
 .quiz-button:hover {
     color: rgb(197, 156, 69);
@@ -132,6 +133,7 @@ body{height:100%;}
 .quiz-button:active {
     color: rgb(120, 96, 50);
 }
+
 
 .contacts {
     grid-area: contacts;
@@ -270,4 +272,98 @@ body{height:100%;}
 }
 .channels img:active {
     border: 3px solid rgb(120, 96, 50);
+}
+
+.quiz {
+    background: rgb(197, 156, 69);
+    display: none;
+    margin: 0 auto;
+    max-width: 1270px;
+    min-height: 100vh;
+    padding: 20px;
+}
+.quiz-question {
+    background-color: rgb(24, 27, 24);
+    border: 1px solid;
+    border-radius: 15px;
+    box-shadow: -2px 4px 5px  #000;
+    cursor: default;  
+    font-size: 140%;
+    height: 100%;
+    padding: 10px;
+    width: 100%;
+}
+.quiz-option {
+    align-content: center;
+    cursor: default;
+    font-size: 120%;
+    line-height: 10%;
+    list-style: none;
+    margin-top: 10%;
+    padding: 10px;
+    user-select: none;
+    width: 50%;
+}
+.quiz-option:hover {
+    color: rgb(120, 96, 50);
+}
+.quiz-option:active {
+    color: rgb(24, 27, 24);
+}
+.result {
+    background: rgb(197, 156, 69);
+    display: none;
+    margin: 0 auto;
+    max-width: 1270px;
+    min-height: 100vh;
+    padding: 20px;
+}
+.result span {
+    background-color: rgb(24, 27, 24);
+    border: 1px solid;
+    border-radius: 15px;
+    box-shadow: -2px 4px 5px  #000;
+    cursor: default;  
+    font-size: 140%;
+    height: 100%;
+    padding: 10px;
+    width: 100%;
+}
+.result img {
+    border: 2px solid rgb(24, 27, 24);
+    border-radius: 50%; 
+    height: 150px;
+    margin: 3% 0 0 0;
+    width: 150px;
+}
+.quiz-end {
+    align-content: center;
+    cursor: default;
+    font-size: 110%;
+    line-height: 10%;
+    list-style: none;
+    margin-top: 1%;
+    padding: 10px 0;
+    user-select: none;
+    width: 100%;
+}
+.finish-button {
+    background-color: rgb(24, 27, 24);
+    border: 1px solid;
+    border-radius: 15px;
+    box-shadow: -2px 4px 5px  #000;
+    color: #fff;
+    cursor: default;  
+    font-size: 110%;
+    height: 120%;
+    margin-top: 1%;
+    padding: 5px;
+    user-select: none;
+    width: 10%;
+}
+.finish-button:hover {
+    color: rgb(197, 156, 69);
+}
+.finish-button:active {
+    color: rgb(120, 96, 50);
 }

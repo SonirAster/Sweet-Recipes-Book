@@ -42,6 +42,18 @@ const questions = [
         c:'3. Parrot.' 
     }
 ];
+const results = [
+    text = [
+        `<div id="quiz-end" class="quiz-end">Prague Cake, Black Forest Cake, Sparta Cake, Chocolate Ice Cream.</div>`,
+        `<div id="quiz-end" class="quiz-end">Pigeons Milk Cake, Honey Cake, Cappuccino Cake, Creme Brulee Ice Cream.</div>`,
+        `<div id="quiz-end" class="quiz-end">Kyiv Cake, Apples Biscuit, Baklava, Sorbet.</div>`,
+    ],
+    image = [
+        `<div id="quiz-img"><img id="result-img1" src="./quiz1.jpg" /></div>`,
+        `<div id="quiz-img"><img id="result-img1" src="./quiz2.jpg"/></div>`,
+        `<div id="quiz-img"><img id="result-img1" src="./quiz3.jpg" /></div>`,
+    ],
+];
 
 const quizBtn = document.getElementById('quiz-btn');
 const endBtn = document.getElementById('endQuiz');
@@ -64,6 +76,7 @@ let option_b = questions[questionIndex]['b'];
 let option_c = questions[questionIndex]['c'];
 let result = document.getElementById('quiz-end');
 let resultImg = document.getElementById('quiz-img');
+
 
 function finishQuiz () {
     document.getElementById('dd').style.display = 'block';
@@ -111,13 +124,13 @@ function showResult (score) {
     document.getElementById('quiz').style.display = 'none';
     document.getElementById('quiz-result').style.display = 'block';
     if (score <= 11) {
-        result.innerHTML = `<div id="quiz-end" class="quiz-end">Prague, Black Forest, Sparta, Chocolate Ice Cream.</div>`   
-        resultImg.innerHTML = `<div id="quiz-img"><img id="result-img1" src="./quiz1.jpg" /></div>`
+        result.innerHTML = results[0][0];
+        resultImg.innerHTML = results[1][0];
     } else if (score >= 12 && score <= 16) {
-        result.innerHTML = `<div id="quiz-end" class="quiz-end">Pigeons Milk, Honey Cake, Cappuccino Cake, Creme Brulee Ice Cream.</div>`   
-        resultImg.innerHTML = `<div id="quiz-img"><img id="result-img1" src="./quiz2.jpg"/></div>`
+        result.innerHTML =  results[0][1];
+        resultImg.innerHTML = results[1][1];
     } else {
-        result.innerHTML = `<div id="quiz-end" class="quiz-end">Kyiv Cake, Apples Biscuit, Baklava, Sorbet.</div>`  
-        resultImg.innerHTML = `<div id="quiz-img"><img id="result-img1" src="./quiz3.jpg" /></div>`    
+        result.innerHTML = results[0][2];
+        resultImg.innerHTML = results[1][2];
     }
 }
