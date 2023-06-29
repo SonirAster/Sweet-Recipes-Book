@@ -1,24 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width">
-    <meta name="format-detection" content="telephone-no">
+    <meta name="viewport" content="width=device-width, initial-scale = 1.0">
     <title>recipes_book</title>
     <link rel="stylesheet" href="index.css">
 </head>
-
 <body>
-    <div class="wrapper">
+    <div class="page-wrapper" id="page-wrapper">
         <header class="header">
-            <a href=""><img src="./logo.jpeg" class="logo"> </a>            
-                <div class="categories-menu">Categories &bigtriangledown;
-                    <ul class="categories-list">
-                        <li><a href="#">CategoryName</a></li>
-                    </ul>  
-                </div>              
+            <a href=""><img src="./logo.jpeg" class="logo"> </a>
+            <div class="categories-menu">Categories &bigtriangledown;
+                <ul class="categories-list">
+                    <li><a href="#">CategoryName</a></li>
+                </ul>
+            </div>
             <form class="search-bar" action="https://www.google.com/search" method="get">
                 <input type="text" placeholder="Search" name="q">
                 <button type="submit"><img src="./search.png"></button>
@@ -28,15 +25,15 @@
                 <div>+00 000 123 45 67</div>
                 <div>+00 000 123 45 68</div>
             </div>
-            <div class="quiz-button">
-                Recipe Quiz
+            <div class="quiz-button" id="quiz-btn">
+                What Dessert is Right for You? Find This Out!
             </div>
             <div class="sign-in-button">
                 <a href="#">Sign In</a>
             </div>
         </header>
 
-        <div class="block-container">
+        <div class="block-container" id="dd">
             <div class="block">
                 <a href="" class="block-title">Recipe Title</a>
                 <div class="block-content">
@@ -56,6 +53,16 @@
                 </div>
             </div>
         </div>
+        <div class='quiz' id="quiz">
+            <div class="quiz-content" id='quiz'>
+                <div class='quiz-question' id='question'>Question</div>
+                <ul id='answers'>
+                    <li class='quiz-option' id='a_text'>Answer</li>
+                    <li class='quiz-option' id='b_text'>Answer</li>
+                    <li class='quiz-option' id='c_text'>Answer</li>
+                </ul>
+            </div>
+        </div>
 
         <footer class="footer">
             <img src="./logo.jpeg" class="logo">
@@ -71,6 +78,7 @@
             </div>
         </footer>
     </div>
+    <script src="script.js"></script>
 </body>
-
 </html>
+
