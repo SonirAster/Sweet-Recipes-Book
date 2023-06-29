@@ -111,13 +111,13 @@ function showResult (score) {
     document.getElementById('quiz').style.display = 'none';
     document.getElementById('quiz-result').style.display = 'block';
     if (score <= 11) {
-        result.innerHTML = `<div id="quiz-end" class="quiz-end">result1</div>`   
+        result.innerHTML = `<div id="quiz-end" class="quiz-end">Prague, Black Forest, Sparta, Chocolate Ice Cream.</div>`   
         resultImg.innerHTML = `<div id="quiz-img"><img id="result-img1" src="./quiz1.jpg" /></div>`
     } else if (score >= 12 && score <= 16) {
-        result.innerHTML = `<div id="quiz-end" class="quiz-end">result2</div>`   
-        resultImg.innerHTML = `<div id="quiz-img"><img id="result-img1" src="./quiz2.jpg" /></div>`
+        result.innerHTML = `<div id="quiz-end" class="quiz-end">Pigeons Milk, Honey Cake, Cappuccino Cake, Creme Brulee Ice Cream.</div>`   
+        resultImg.innerHTML = `<div id="quiz-img"><img id="result-img1" src="./quiz2.jpg"/></div>`
     } else {
-        result.innerHTML = `<div id="quiz-end" class="quiz-end">result3</div>`  
+        result.innerHTML = `<div id="quiz-end" class="quiz-end">Kyiv Cake, Apples Biscuit, Baklava, Sorbet.</div>`  
         resultImg.innerHTML = `<div id="quiz-img"><img id="result-img1" src="./quiz3.jpg" /></div>`    
     }
 }
