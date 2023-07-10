@@ -55,58 +55,66 @@ const results = [
     ],
 ];
 
-const quizBtn = document.getElementById('quiz-btn');
-const endBtn = document.getElementById('endQuiz');
-const currentQuestion = document.getElementById('question');
-const current_a_text = document.getElementById('a_text');
-const current_b_text = document.getElementById('b_text');
-const current_c_text = document.getElementById('c_text');
-
-quizBtn.addEventListener('click', startQuiz);
-endBtn.addEventListener('click', finishQuiz);
-current_a_text.addEventListener('click', selectOption);
-current_b_text.addEventListener('click', selectOption);
-current_c_text.addEventListener('click', selectOption);
-
-let score = 0;
-let questionIndex = 0;
-let question = questions[questionIndex]['question'];
-let option_a = questions[questionIndex]['a'];
-let option_b = questions[questionIndex]['b'];
-let option_c = questions[questionIndex]['c'];
-let result = document.getElementById('quiz-end');
-let resultImg = document.getElementById('quiz-img');
-
-
-function finishQuiz () {
-    document.getElementById('dd').style.display = 'block';
-    document.getElementById('quiz-result').style.display = 'none';
-    document.getElementById('quiz').style.display = 'none';
+function getEl (id) {
+    let element = document.getElementById(id);
+    return element;
 }
-function startQuiz() {
-    document.getElementById('dd').style.display = 'none';
-    document.getElementById('quiz-result').style.display = 'none';
-    document.getElementById('quiz').style.display = 'block';
-    loadQuiz(question, option_a, option_b, option_c);
+function aELoC (el, fn) {
+    let element = el.addEventListener('click', fn);
+    return element;
+}
+function assignContent () {
+    question = questions[questionIndex]['question'];
+    option_a = questions[questionIndex]['a'];
+    option_b = questions[questionIndex]['b'];
+    option_c = questions[questionIndex]['c'];
+}
+
+const quizBtn = getEl('quiz-btn');
+const endBtn = getEl('endQuiz');
+const currentQuestion = getEl('question');
+const current_a_text = getEl('a_text');
+const current_b_text = getEl('b_text');
+const current_c_text = getEl('c_text');
+
+aELoC(quizBtn, startQuiz);
+aELoC(endBtn, finishQuiz);
+aELoC(current_a_text,selectOption);
+aELoC(current_b_text,selectOption);
+aELoC(current_c_text,selectOption);
+
+var questionIndex = 0;
+var question;
+var option_a;
+var option_b;
+var option_c;
+var score = 0;
+var result = getEl('quiz-end');
+var resultImg = getEl('quiz-img');
+
+function startQuiz () {
+    questionIndex = 0;
+    assignContent();
+    loadQuiz();
+    score = 0;
     questionIndex++;
 }
-function loadQuiz (question, option_a, option_b, option_c) {
+function loadQuiz () {
     currentQuestion.innerHTML = `<div id='question'>${question}</div>`;
     current_a_text.innerHTML = `<li id='a_text'>${option_a}</li>`
     current_b_text.innerHTML = `<li id='b_text'>${option_b}</li>`
     current_c_text.innerHTML = `<li id='c_text'>${option_c}</li>`
+    getEl('dd').style.display = 'none';
+    getEl('quiz-result').style.display = 'none';
+    getEl('quiz').style.display = 'block';
 }
 function selectOption (optn) { 
-    if (questionIndex < questions.length){
-        option_a = questions[questionIndex]['a'];
-        option_b = questions[questionIndex]['b'];
-        option_c = questions[questionIndex]['c'];
-        question = questions[questionIndex]['question'];
-        loadQuiz (question, option_a, option_b, option_c);
-        countResult(optn.target);
+    if  (questionIndex <= 6) {
+        assignContent();
         questionIndex++;
-    } else{
+        loadQuiz ();
         countResult(optn.target);
+    } else {
         showResult(score);
     }
 }
@@ -120,9 +128,8 @@ function countResult(el) {
     }     
 }
 function showResult (score) {
-    console.log('result: ' + score);
-    document.getElementById('quiz').style.display = 'none';
-    document.getElementById('quiz-result').style.display = 'block';
+    getEl('quiz').style.display = 'none';
+    getEl('quiz-result').style.display = 'block';
     if (score <= 11) {
         result.innerHTML = results[0][0];
         resultImg.innerHTML = results[1][0];
@@ -134,3 +141,12 @@ function showResult (score) {
         resultImg.innerHTML = results[1][2];
     }
 }
+function finishQuiz () {
+    getEl('dd').style.display = 'block';
+    getEl('quiz-result').style.display = 'none';
+    getEl('quiz').style.display = 'none';
+    score = 0;
+    questionIndex = 0;
+    assignContent();
+}
+
