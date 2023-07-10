@@ -55,15 +55,9 @@ const results = [
     ],
 ];
 
-function getEl (id) {
-    let element = document.getElementById(id);
-    return element;
-}
-function aELoC (el, fn) {
-    let element = el.addEventListener('click', fn);
-    return element;
-}
-function assignContent () {
+let getEl = (id) => document.getElementById(id);
+let aELoC = (el, fn) => el.addEventListener('click', fn);
+let assignContent = () => {
     question = questions[questionIndex]['question'];
     option_a = questions[questionIndex]['a'];
     option_b = questions[questionIndex]['b'];
@@ -83,14 +77,14 @@ aELoC(current_a_text,selectOption);
 aELoC(current_b_text,selectOption);
 aELoC(current_c_text,selectOption);
 
-var questionIndex = 0;
-var question;
-var option_a;
-var option_b;
-var option_c;
-var score = 0;
-var result = getEl('quiz-end');
-var resultImg = getEl('quiz-img');
+let questionIndex = 0;
+let question;
+let option_a;
+let option_b;
+let option_c;
+let score = 0;
+let result = getEl('quiz-end');
+let resultImg = getEl('quiz-img');
 
 function startQuiz () {
     questionIndex = 0;
@@ -149,4 +143,3 @@ function finishQuiz () {
     questionIndex = 0;
     assignContent();
 }
-
