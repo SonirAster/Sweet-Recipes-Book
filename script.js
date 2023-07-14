@@ -64,6 +64,7 @@ let assignContent = () => {
     option_c = questions[questionIndex]['c'];
 }
 
+const mobQuizBtn = getEl('mob-quiz-btn');
 const quizBtn = getEl('quiz-btn');
 const endBtn = getEl('endQuiz');
 const currentQuestion = getEl('question');
@@ -71,6 +72,7 @@ const current_a_text = getEl('a_text');
 const current_b_text = getEl('b_text');
 const current_c_text = getEl('c_text');
 
+aELoC(mobQuizBtn, startQuiz);
 aELoC(quizBtn, startQuiz);
 aELoC(endBtn, finishQuiz);
 aELoC(current_a_text,selectOption);
@@ -136,7 +138,8 @@ function showResult (score) {
     }
 }
 function finishQuiz () {
-    getEl('dd').style.display = 'block';
+    let blockContainer = getEl('dd').style;
+    blockContainer.display = 'block';
     getEl('quiz-result').style.display = 'none';
     getEl('quiz').style.display = 'none';
     score = 0;
