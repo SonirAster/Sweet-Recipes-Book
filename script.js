@@ -45,7 +45,7 @@ const questions = [
 const results = [
     text = [
         `<div id="quiz-end" class="quiz-end">Prague Cake, Black Forest Cake, Sparta Cake, Chocolate Ice Cream.</div>`,
-        `<div id="quiz-end" class="quiz-end">Pigeons Milk Cake, Honey Cake, Cappuccino Cake, Creme Brulee Ice Cream.</div>`,
+        `<div id="quiz-end" class="quiz-end">Pigeons Milk Cake, Honey Cake, Capuccino Cake, Creme Brulee Ice Cream.</div>`,
         `<div id="quiz-end" class="quiz-end">Kyiv Cake, Apples Biscuit, Baklava, Sorbet.</div>`,
     ],
     image = [
@@ -108,18 +108,19 @@ function selectOption (optn) {
     if  (questionIndex <= 6) {
         assignContent();
         questionIndex++;
-        loadQuiz ();
+        loadQuiz();
         countResult(optn.target);
-    } else {
+    } else  {
         showResult(score);
     }
+    console.log(score);
 }
 function countResult(el) {
     if (el.innerText.includes('1')) {     
         score = score + 1;
     } else if (el.innerText.includes('2')) {      
         score = score + 2;
-    } else {
+    } else if (el.innerText.includes('3')) {
         score = score + 3;
     }     
 }
